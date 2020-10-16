@@ -75,7 +75,7 @@ class ProductsController {
     }
 
     function showAdmin() {
-        // $this->checkLoggedIn();
+         $this->checkLoggedIn();
 
         $categories = $this->model->getCategories();
         $products = $this->model->getProducts();

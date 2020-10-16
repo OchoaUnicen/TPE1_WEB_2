@@ -22,6 +22,8 @@
             {include file="listaAccordionDeleteProduct.tpl"}
             {include file="listaAccordionEditProduct.tpl"} *}
 
+            <button><a href="logout">Log out</a></button>
+
         <footer>
             <h2>Powered by us</h2>
         </footer>
