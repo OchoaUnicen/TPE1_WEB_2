@@ -1,0 +1,66 @@
+
+.boxSelect {
+    min-width: 600px;
+    background: var(--shadow-color);
+    padding: 30px;
+}
+
+.boxSelect h2 {
+
+    color: var(--contrast-color);
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 10px;
+
+}
+
+.boxSelect input {
+
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
+    box-sizing: border-box;
+}
+
+.boxSelect input[type="text"] {
+
+    background: var(--contrast-color);
+    width: 340px;
+    height: 2em;
+    border: none;
+    outline: none;
+    padding: 0 25px;
+
+}
+
+.boxSelect select {
+    position: relative;
+    left: -3px;
+    border: none;
+    outline: none;
+    background: var(--contrast-color);
+    font-size: 18px;
+    padding: 11px 16px 12px;
+
+    margin: -2px;
+    border-right: 15px solid var(--contrast-color);
+}
+
+.boxSelect input[type="submit"] {
+
+    position: relative;
+    left: -5px;
+    width: 150px;
+    height: 2em;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: var(--action-color);
+    color: var(--contrast-color);
+}
+
+.boxSelect input[type="submit"]:hover {
+    transition: 0.5s;
+    color: var(--action-color);
+    background: var(--contrast-color);
+}

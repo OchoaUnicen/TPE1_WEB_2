@@ -1,0 +1,118 @@
+.listaProductos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background: var(--shadow-color);
+    width: 100%;
+    margin: 10px 0;
+}
+.listaProductos h2 {
+    font-size: 2em;
+    text-transform: uppercase;
+}
+.listaProductos .cartaBx {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.listaProductos .cartaBx .card {
+
+    width: 315px;
+    
+    border: 1px solid var(--contrast-color);
+    padding: 10px;
+    margin: 20px;
+    background: var(--main-color);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    flex-direction: column;
+}
+
+
+.listaProductos .cartaBx .card:hover {
+    transition: 0.5s;
+    transform: scale(1.2);
+}
+
+.listaProductos .cartaBx .card .imgBx {
+    width: 150px;
+}
+
+.listaProductos .cartaBx .card .imgBx img {
+    width: 100%;
+}
+
+.listaProductos .cartaBx .card .contentBx {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    background: linear-gradient(to bottom, var(--main-color),var(--shadow-color));
+}
+
+.listaProductos .cartaBx .card .contentBx h2 {
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 2em;
+    /* margin-bottom: 1em; */
+}
+
+.listaProductos .cartaBx .card .contentBx p {
+    font-weight: 400;
+    
+    display: none;
+}
+
+
+.listaProductos .cartaBx .card .contentBx p.price {
+    
+    text-align: center;
+    font-weight: 400;
+    font-size: 2em;
+    width: 100%;
+    padding: 20px;
+    margin-top: 1em;
+    border-radius: 20px;
+    
+}
+
+.listaProductos .cartaBx .card .contentBx a {
+    padding: 1em;
+    margin: 1em;
+    text-align: center;
+    width: 100%;
+    border-top: 1px solid var(--contrast-color);
+    border-bottom: 1px solid var(--contrast-color);
+
+    color: var(--contrast-color);
+    text-transform: uppercase;
+    text-decoration: none;
+    margin: 10px 0;
+    display: inline-block;
+    
+    background: var(--shadow-color);
+
+}
+
+.listaProductos .cartaBx .card .contentBx a:hover {
+    transition: 1s;
+    background: var(--action-color);
+}
+
+.listaProductos .cartaBx .card:hover .contentBx p {
+    transition: 2s;
+    display: block;
+}
+.listaProductos .cartaBx .card:hover .contentBx p.price {
+    transition: 5s;
+    
+    font-size: 2em;
+    background: blue;
+}

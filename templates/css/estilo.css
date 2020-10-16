@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Commissioner:wght@300;400;500;600;700;800;900&display=swap');
+
+
+:root {
+
+
+    /*PALETTE https://coolors.co/3d5a80-98c1d9-e0fbfc-ee6c4d-293241 */
+
+
+    --main-color: #333131;
+    --contrast-color: #fff;
+    --action-color: #EE6C4D;
+    --shadow-color: #161515;
+    
+
+}
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Commissioner', sans-serif;
+}
+
+body {
+    background: var(--main-color);
+}

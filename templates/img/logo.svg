@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 91 91" width="91" height="91">
+	<defs>
+		<image width="29" height="18" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB0AAAASCAYAAACnxdXaAAABNElEQVRIS8WVMTJEQRRFz6yAkBUQ2gHhWAElGisgtAOpWQGhWcEIWQHZsAJCVkA95f+67vz+r1uis1/d5913X93uP+Ef1sQ0P5MeVsAJ8DRwLmN7REW3gNdK46fAjZxtYVHRGXBdKRrH/srOFbwFjkTUR38P7Mu+us3YX1608DOwMyLqk1DRd2BjhC2KehDc6RVwViicsVWiD8CBnHTBF2BX9lXU2bWYdG72gMfKEHnRWvYD2NQEtiR3G3iTBlvYb5OdU09muOlWONGQ+HVxtjSwfkKdaJa+KbCUaofA3c93U4i0YwX72Y88kXPgfEC0xA6mN0ufO9U7quwCOM4CGeMdKxi87+uEMnZQP0QvgMusO9lXN856souitemLAv4oOOuvWFG05j8YAYkXyv+jzcmNLr4APE9Fobh8AtQAAAAASUVORK5CYII="/>
+	</defs>
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: none;stroke: #000000;stroke-linecap:round;stroke-linejoin:round;stroke-width: 3 } 
+	</style>
+	<path id="Layer 1" class="shp0" d="M2 2L76 2L76 76L2 76L2 2Z" />
+	<path id="Layer 1 copy" class="shp0" d="M15 15L89 15L89 89L15 89L15 15Z" />
+	<use id="BF " href="#img1" transform="matrix(1,0,0,1,44,54)"/>
+</svg>

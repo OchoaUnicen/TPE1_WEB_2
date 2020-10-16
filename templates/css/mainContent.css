@@ -1,0 +1,16 @@
+.mainContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    color: var(--contrast-color);
+    
+}
+
+.mainContent h1 {
+    font-size: 3em;
+    margin-top: 1em;
+    
+}
+

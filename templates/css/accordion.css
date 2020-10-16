@@ -1,0 +1,51 @@
+
+
+.accordion {
+
+    width: 90vw;
+
+}
+
+.accordion .accordionContentBx {
+    position: relative;
+    margin: 20px;
+}
+
+.accordion .accordionContentBx .label {
+    position: relative;
+    padding: 10px;
+    background: var(--action-color);
+    color: var(--contrast-color);
+    cursor: pointer;
+}
+
+.accordion .accordionContentBx .label::before {
+    content: '+';
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: 1.5em;
+}
+
+.accordion .accordionContentBx.active .label::before {
+    content: '-';
+}
+
+.accordion .accordionContentBx .content {
+    position: relative;
+    background: var(--main-color);
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s;
+    overflow-y: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.accordion .accordionContentBx.active .content {
+    height: 100%;
+    padding: 10px;
+}

@@ -1,0 +1,69 @@
+
+.listBox {
+    width: 300px;
+    border-bottom: 20px solid var(--shadow-color);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px; 
+    margin: 2em;
+    
+}
+
+
+.listBox h2 {
+    color: var(--contrast-color);
+    background: var(--shadow-color);
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: 700;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.listBox ul {
+
+    position: relative;
+    background: var(--contrast-color);
+}
+
+.listBox ul li {
+    list-style-type: none;
+    padding: 10px;
+    width: 100%;
+    background: var(--main-color);
+    box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+    transition: transform 0.5s;
+}
+
+
+.listBox ul li:hover{
+
+    transform: scale(1.1);
+    z-index: 100;
+    background: var(--action-color);
+    box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+    color: var(--contrast-color);
+    opacity: 1;
+}
+
+.listBox ul li span {
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    background: var(--action-color);
+    color: var(--contrast-color);
+    display: inline-block;
+    border-radius: 50%;
+
+    margin-right: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    transform: translateY(-2px);
+
+    
+}
+
+.listBox ul li:hover span {
+    background: var(--contrast-color);
+    color: var(--action-color);
+}
