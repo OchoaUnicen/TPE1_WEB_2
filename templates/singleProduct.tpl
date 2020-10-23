@@ -8,7 +8,14 @@
             {include file="filtro.tpl"}
 
 {foreach $products as $product}
-           
+        {if {$product->id_product} eq {$parametro_producto}}
+            
+            {if {$categories->nombre} eq {$parametro_categoria}}
+        
+        
+        
+
+        
        <div class="card">
         <div class="imgBx">
 
@@ -23,7 +30,12 @@
             <a href="#">Buy Now</a>
         </div>
     </div>
+    {else}
 
+    <p>No existe ese producto en esta categoria</p>
+    {/if}
+
+{/if}
 {/foreach}      
 
         <footer>

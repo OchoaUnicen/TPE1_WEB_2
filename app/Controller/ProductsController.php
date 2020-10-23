@@ -51,11 +51,11 @@ class ProductsController {
      
         $categories = $this->model->GetCategories();
         $products = $this->model->GetProducts();
-
+        //aca quede
         //if product id == category id then
         
             $this->model->GetAllByCatName($parametroCat);
-            $this->model->GetProduct($parametroProd);
+            $product = $this->model->GetProduct($parametroProd);
             //model get by id($parametroProd)
             
             $this->view->ShowbySpecificId($categories,$products,$parametroCat,$parametroProd);
