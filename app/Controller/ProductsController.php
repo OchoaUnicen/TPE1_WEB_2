@@ -53,7 +53,7 @@ class ProductsController {
         $products = $this->model->GetProducts();
         //aca quede
         //if product id == category id then
-        
+        //traer una sola categoria que cumpla ser la del parametro
             $this->model->GetAllByCatName($parametroCat);
             $product = $this->model->GetProduct($parametroProd);
             //model get by id($parametroProd)

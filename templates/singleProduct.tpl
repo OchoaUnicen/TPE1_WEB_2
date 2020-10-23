@@ -10,7 +10,7 @@
 {foreach $products as $product}
         {if {$product->id_product} eq {$parametro_producto}}
             
-            {if {$categories->nombre} eq {$parametro_categoria}}
+            {* {if {$categories->nombre} eq {$parametro_categoria}} *}
         
         
         
@@ -30,10 +30,10 @@
             <a href="#">Buy Now</a>
         </div>
     </div>
-    {else}
+    {* {else}
 
     <p>No existe ese producto en esta categoria</p>
-    {/if}
+    {/if} *}
 
 {/if}
 {/foreach}      

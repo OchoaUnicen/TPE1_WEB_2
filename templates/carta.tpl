@@ -19,7 +19,7 @@
             {foreach $categories as $category}
             {if ($product->id_category) eq ($category->id_category)}
 
-            <p class="cat">Categoria: </p>
+            <p class="cat">Categoria: {$category->nombre}</p>
             <a href="productos/{$category->nombre}/{$product->id_product}">Ver MAS</a>
             {/if}
             {/foreach}  
