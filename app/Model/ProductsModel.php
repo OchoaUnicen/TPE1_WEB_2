@@ -47,9 +47,19 @@ class ProductsModel {
         $sentencia->execute(array($name,$description,$price,$image_url,$id_category));
     }
 
+    function insertarCategoria($name){
+        $sentencia = $this->db->prepare("INSERT INTO category(nombre) VALUES(?)");
+        $sentencia->execute(array($name));
+    }
+
     function editarProducto($product_id,$name){
         $sentencia = $this->db->prepare("UPDATE product SET name=$name WHERE id_product=?");
         $sentencia->execute(array($name,$product_id));
+    }
+
+    function editarNombreCategoria($category_id,$name){
+        $sentencia = $this->db->prepare("UPDATE category SET nombre='$name' WHERE id_category=?");
+        $sentencia->execute(array($category_id));
     }
 
     function MarkAsCompletedTask($task_id){
@@ -62,12 +72,34 @@ class ProductsModel {
         $sentencia = $this->db->prepare("DELETE FROM product WHERE id_product=?");
         $sentencia->execute(array($product_id));
     }
+
+    function DeleteCategory($category_id){
+        $sentencia = $this->db->prepare("DELETE FROM category WHERE id_category=?");
+        $sentencia->execute(array($category_id));
+    }
+
+
+    
+
+
+
+
     function SetPrecioMil($product_id){
         
         $sentencia = $this->db->prepare("UPDATE product SET price='1000' WHERE id_product=?");
         $sentencia->execute(array($product_id));
     
     }
+
+    function setNombreCategoria($category_id){
+        
+        $sentencia = $this->db->prepare("UPDATE product SET price='1000' WHERE id_product=?");
+        $sentencia->execute(array($product_id));
+    
+    }
+
+
+    
 
 
     function editarTodosLosProductos($product_id,$name,$description,$price,$image_url,$id_category){

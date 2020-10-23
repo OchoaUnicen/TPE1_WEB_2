@@ -18,9 +18,9 @@
 
 
             {* CATEGORIA *}
-            {* {include file="listaAccordionAddProduct.tpl"}
-            {include file="listaAccordionDeleteProduct.tpl"}
-            {include file="listaAccordionEditProduct.tpl"} *}
+            {include file="listaAccordionAddCategory.tpl"}
+            {include file="listaAccordionDeleteCategory.tpl"}
+            {include file="listaAccordionEditCategory.tpl"}
 
             <button><a href="logout">Log out</a></button>
 

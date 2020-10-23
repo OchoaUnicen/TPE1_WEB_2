@@ -31,15 +31,18 @@ $ruta->addRoute("admin","GET","ProductsController","showAdmin");
 //agregar
 
 $ruta->addRoute("insert", "POST", "ProductsController", "insertProduct");
-
+$ruta->addRoute("insertCategory", "POST", "ProductsController", "insertCategory");
 //borrar
 
 $ruta->addRoute("delete/:ID", "GET", "ProductsController", "deleteProduct");
+$ruta->addRoute("deleteCategory/:ID", "GET", "ProductsController", "deleteCategory");
 
 // editar
 
 $ruta->addRoute("edit/:ID", "GET", "ProductsController", "editProductPrice");
 $ruta->addRoute("editar", "POST", "ProductsController", "editAllProduct");
+$ruta->addRoute("editarCategoria", "POST", "ProductsController", "editCategory");
+
 //users
 
 $ruta->addRoute("login","GET","UserController","LogIn");

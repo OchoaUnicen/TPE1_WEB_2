@@ -87,12 +87,22 @@ class ProductsController {
 
     function insertProduct() {
 
+
         $this->model->insertarProducto(
             $_POST['name'],
             $_POST['description'],
             $_POST['price'],
             $_POST['image_url'],
             $_POST['id_category']);
+
+        // actualizar la pagina
+        $this->view->ShowHomeLocation();
+
+    }
+
+    function insertCategory() {
+
+        $this->model->insertarCategoria($_POST['nombre']);
 
         // actualizar la pagina
         $this->view->ShowHomeLocation();
@@ -118,6 +128,20 @@ class ProductsController {
         $this->view->ShowHomeLocation();
     }
 
+    function editCategory() { 
+       
+        $this->model->editarNombreCategoria(    
+            $_POST['id_categoryEdit'],
+            $_POST['nombreCategoryEdit']);
+        $this->view->ShowHomeLocation();
+    }
+
+   
+
+
+
+    
+
     function deleteProduct($params = null){
         $product_id = $params[':ID'];
         $this->model->DeleteProductM($product_id);
@@ -125,6 +149,11 @@ class ProductsController {
     }
 
     
+    function deleteCategory($params = null){
+        $category_id = $params[':ID'];
+        $this->model->DeleteCategory($category_id);
+        $this->view->ShowHomeLocation();
+    }
 
 
 }
