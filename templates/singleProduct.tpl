@@ -7,7 +7,7 @@
 
             {include file="filtro.tpl"}
 
-{foreach $producto_s as $product}
+{foreach $products as $product}
            
        <div class="card">
         <div class="imgBx">
@@ -19,6 +19,7 @@
             <h2>{$product->name}</h2>
             <p>{$product->description}</p>
             <p class="price">{$product->price}</p>
+            <p>{$product->id_category}</p>
             <a href="#">Buy Now</a>
         </div>
     </div>

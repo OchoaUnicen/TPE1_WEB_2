@@ -29,6 +29,17 @@ class ProductsView {
         $smarty->display('templates/mainContentbyCategory.tpl'); // muestro el template 
     }
 
+    function ShowbySpecificId($categories,$products,$parametroCat,$parametroProd) {
+ 
+        $smarty = new Smarty();
+        $smarty->assign('titulo_s', $this->title);
+        $smarty->assign('categories', $categories);
+        $smarty->assign('products', $products);
+        $smarty->assign('parametro_categoria', $parametroCat);
+        $smarty->assign('parametro_producto', $parametroProd);
+        $smarty->display('templates/singleProduct.tpl'); // muestro el template 
+    }
+
    function ShowHomeLocation(){
         header("Location: ".BASE_URL."home");
     }

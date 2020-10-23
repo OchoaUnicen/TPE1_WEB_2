@@ -46,14 +46,19 @@ class ProductsController {
 
     function GetProdById($params = null){
         
-        $parametro = $params[':ID_prod'];
+        $parametroCat = $params[':ID_C'];
+        $parametroProd = $params[':ID_P'];
      
         $categories = $this->model->GetCategories();
         $products = $this->model->GetProducts();
 
+        //if product id == category id then
         
-            $this->model->GetAllByCatName($parametro);
-            $this->view->ShowbyCategoriesbyName($categories,$parametro,$products);
+            $this->model->GetAllByCatName($parametroCat);
+            $this->model->GetProduct($parametroProd);
+            //model get by id($parametroProd)
+            
+            $this->view->ShowbySpecificId($categories,$products,$parametroCat,$parametroProd);
         
         
     }

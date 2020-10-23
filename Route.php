@@ -23,6 +23,7 @@ $ruta->addRoute("productos","GET","ProductsController","Home");
 
 $ruta->addRoute("productos/:ID","GET","ProductsController","GetCatByName");
 
+$ruta->addRoute("productos/:ID_C/:ID_P","GET","ProductsController","GetProdById");
 
 //administracion
 

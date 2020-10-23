@@ -15,9 +15,9 @@
                 Usuario Administrador
             </h3>
             <div class="buttonBx">
-                <a href="#">Log in</a>
-                <a href="#">Administrar</a>
-                <a href="#">Log out</a>
+                <a href="login">Log in</a>
+                <a href="admin">Administrar</a>
+                <a href="logout">Log out</a>
             </div>
         </div>
     </div>
