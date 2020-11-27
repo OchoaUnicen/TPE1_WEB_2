@@ -15,6 +15,22 @@ class UserModel{
         $sentencia->execute(array($users));
         return $sentencia->fetch(PDO::FETCH_OBJ);
     }
+
+    function GetUsers(){
+
+
+        $query = $this->db->prepare('SELECT * FROM users');
+        $query->execute();
+        $users = $query->fetchAll(PDO::FETCH_OBJ);
+        return $users;
+    
+        
+    }
+
+    function InsertUser($email,$pass,$time){
+        $sentencia = $this->db->prepare("INSERT INTO users(email, pass, fecha_registro) VALUES(?,?,?)");
+        $sentencia->execute(array($email,$pass,$time));
+    }
       
 }
 

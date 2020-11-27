@@ -21,6 +21,33 @@ class UserView{
         $smarty->display('templates/login.tpl'); // muestro el template 
     }
 
+    function ShowHomeLocation(){
+        header("Location: ".BASE_URL."home");
+    }
+
+
+    function ShowRegister($message = ""){
+
+        $register = "Register";
+        $smarty = new Smarty();
+        $smarty->assign('titulo_s', $register);
+        $smarty->assign('message', $message);
+
+        $smarty->display('templates/register.tpl'); // muestro el template 
+    }
+
+    function ShowUserAdminPanel($message = "", $users, $userFromDB, $cantidad_users){
+
+        //$register = "Admin Panel";
+        $smarty = new Smarty();
+        $smarty->assign('userFromDB', $userFromDB);
+        $smarty->assign('users', $users);
+        $smarty->assign('cantidad_users', $cantidad_users);
+        // $smarty->assign('message', $message);
+
+        $smarty->display('templates/adminPanel.tpl'); // muestro el template 
+    }
+
 }
 
 ?>

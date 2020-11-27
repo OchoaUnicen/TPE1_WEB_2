@@ -8,10 +8,11 @@ class ProductsView {
         $this->title = "Lista de Productos";
     }
 
-    function ShowbyCategories($categories,$products) {
+    function ShowbyCategories($categories,$products, $isLoggedIn) {
  
         $smarty = new Smarty();
         $smarty->assign('titulo_s', $this->title);
+        $smarty->assign('is_logged_in', $isLoggedIn);
         $smarty->assign('categories', $categories);
         $smarty->assign('products', $products);
         $smarty->display('templates/mainContent.tpl'); // muestro el template 

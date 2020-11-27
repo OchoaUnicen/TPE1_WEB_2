@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="https://makarenas.github.io/CSS/listBox.css">
     <link rel="stylesheet" href="https://makarenas.github.io/CSS/footer.css">
     <link rel="stylesheet" href="https://makarenas.github.io/CSS/estiloLogin.css"> 
+    <link rel="stylesheet" href="https://makarenas.github.io/CSS/userNavbar.css">
     <base href="http://{$smarty.server.SERVER_NAME}{dirname($smarty.server.PHP_SELF)}/" target="_self">
 
 

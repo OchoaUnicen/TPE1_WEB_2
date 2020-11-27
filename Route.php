@@ -50,6 +50,12 @@ $ruta->addRoute("login","GET","UserController","LogIn");
 $ruta->addRoute("logout", "GET", "UserController", "Logout");
 $ruta->addRoute("verifyUser", "POST", "UserController", "VerifyUser");
 
+$ruta->addRoute("register", "GET", "UserController", "Register");
+$ruta->addRoute("registerUser", "POST", "UserController", "registerUser");
+$ruta->addRoute("userpanel", "GET", "UserController", "ShowUserPanel");
+
+
+
 //ruta por defecto
 $ruta->setDefaultRoute("ProductsController", "Home");
 

@@ -1,24 +1,22 @@
-  
-
 <div class="filtro">
     <p>Filtros:</p>
     <ul>
-<li>
+        <li>
             <a href="home">
-            Home
+                Home
             </a>
         </li>
     {foreach $categories as $category}
         <li>
             <a href="productos/{$category->nombre}">
-            {$category->nombre}
+                {$category->nombre}
             </a>
         </li>
         
         {/foreach}
         <li>
             <a href="admin">
-            Admin
+                Admin
             </a>
         </li>
 

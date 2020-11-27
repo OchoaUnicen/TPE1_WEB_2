@@ -1,6 +1,7 @@
 {include file="header.tpl"}
 
     {include file="sideMenu.tpl"}
+    {include file="user_navbar.tpl"}
 
         <section id="main" class="mainContent">
             <h1>{$titulo_s}</h1>

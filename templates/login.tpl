@@ -29,7 +29,7 @@
                 <input type="submit" name="" value="Sign In">
             </div>
         </div>
-        <p class="forgot">Forgot Password?<a href="#">Click here</a></p>
+        <p class="forgot">Not registered? <a href="register">Sing up</a></p>
     
     </form>
 

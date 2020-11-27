@@ -17,7 +17,14 @@ class ProductsController {
     function Home(){
         $categories = $this->model->GetCategories();
         $products = $this->model->GetProducts();
-        $this->view->ShowbyCategories($categories,$products);
+        $isLoggedIn = 0;
+        session_start();
+
+        if (isset($_SESSION['LAST_ACTIVITY']) && !empty($_SESSION['LAST_ACTIVITY'])) {
+            $isLoggedIn = 1;
+        }
+
+        $this->view->ShowbyCategories($categories,$products, $isLoggedIn);
     }
     
 
@@ -38,9 +45,6 @@ class ProductsController {
             $this->model->GetAllByCatName($parametro);
             $this->view->ShowbyCategoriesbyName($categories,$parametro,$products);
         }
-        
-            
-        
         
     }
 
