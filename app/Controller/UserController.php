@@ -105,6 +105,29 @@ class UserController{
    }
 
 
+   function AscendAdmin($params = null){
+    $id_user = $params[':ID'];
+    $this->model->ascenderUsuario($id_user);
+    $this->view->ShowUserPanelLocation();
+    }
+
+    function DescendAdmin($params = null){
+        $id_user = $params[':ID'];
+        $this->model->descenderUsuario($id_user);
+        $this->view->ShowUserPanelLocation();
+    }
+
+    
+
+
+    function DeleteUser($params = null){
+        $id_user = $params[':ID'];
+        $this->model->eliminarUsuario($id_user);
+        $this->view->ShowUserPanelLocation();
+    }
+
+
+
 
   
 
@@ -112,6 +135,7 @@ class UserController{
        $input_id;
        $input_pass;
        $time = date("Y-m-d");
+       $default_img_url = "http://shorturl.at/eiqvS";
         if (isset($_POST['input_user_register']) && !empty($_POST['input_user_register'])) {
 
             $input_id = $_POST['input_user_register'];
@@ -136,10 +160,25 @@ class UserController{
                 $this->model->InsertUser(
                     $input_id,
                     $encripted_pass,
-                    $time
+                    $time,
+                    $default_img_url
                 );
+                //aca ss
 
-                $this->view->ShowHomeLocation();
+                
+                session_start();
+                $_SESSION["EMAIL"] = $input_id;
+                $_SESSION["ADMIN"] = 0;
+                $_SESSION['LAST_ACTIVITY'] = time();
+
+                header("Location: ".BASE_URL."home");
+
+
+
+
+
+
+                //$this->view->ShowHomeLocation();
             }
 
 

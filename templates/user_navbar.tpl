@@ -13,6 +13,11 @@
             {/if}
 
                {if {$is_logged_in} eq 1}  
+ 
+                <li>
+                  <a href="userpanel"> Hola, {$logged_user_nick}</a>
+                </li>
+
                 <li>
                     <a href="userpanel"> Panel de control</a>
                 </li>

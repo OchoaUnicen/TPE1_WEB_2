@@ -54,6 +54,12 @@ $ruta->addRoute("register", "GET", "UserController", "Register");
 $ruta->addRoute("registerUser", "POST", "UserController", "registerUser");
 $ruta->addRoute("userpanel", "GET", "UserController", "ShowUserPanel");
 
+$ruta->addRoute("ascenderUsuario/:ID", "GET", "UserController", "AscendAdmin");
+$ruta->addRoute("descenderUsuario/:ID", "GET", "UserController", "DescendAdmin");
+$ruta->addRoute("eliminarUsuario/:ID", "GET", "UserController", "DeleteUser");
+
+
+
 
 
 //ruta por defecto

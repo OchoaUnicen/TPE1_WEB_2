@@ -25,6 +25,10 @@ class UserView{
         header("Location: ".BASE_URL."home");
     }
 
+    function ShowUserPanelLocation(){
+        header("Location: ".BASE_URL."userpanel");
+    }
+
 
     function ShowRegister($message = ""){
 

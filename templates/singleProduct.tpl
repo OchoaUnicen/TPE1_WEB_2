@@ -27,13 +27,27 @@
         <p>No existe ese producto en esta categoria</p>
         {/if} *}
 
+
     {/if}
     {/foreach}      
+
+
+    {* ACA IRIA LA CAJA DE COMENTARIOS SI EL USUARIO ESTA CONECTADO *}
+
+
+    {* SI EL COMENTARIO TIENE UN BOTON DE BORRAR O NO DEPENDERA SI EL USUARIO ES ADMIN O NO *}
+
+
+
+    {* ACA IRIAN EL RESTO DE LOS COMENTARIOS DE ESTE ITEM *}
+    
 
     <footer>
         <h2>Powered by us</h2>
     </footer>
     
 </section>
+
+
 
 {include file="footer.tpl"}

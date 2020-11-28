@@ -18,13 +18,17 @@ class ProductsController {
         $categories = $this->model->GetCategories();
         $products = $this->model->GetProducts();
         $isLoggedIn = 0;
+        //solucion parcial
+        $logged_user_nick = "";
+        //fin solucion parcial
         session_start();
 
         if (isset($_SESSION['LAST_ACTIVITY']) && !empty($_SESSION['LAST_ACTIVITY'])) {
             $isLoggedIn = 1;
+            $logged_user_nick = $_SESSION['EMAIL'];
         }
 
-        $this->view->ShowbyCategories($categories,$products, $isLoggedIn);
+        $this->view->ShowbyCategories($categories,$products, $isLoggedIn, $logged_user_nick);
     }
     
 
@@ -63,8 +67,6 @@ class ProductsController {
             //model get by id($parametroProd)
             
             $this->view->ShowbySpecificId($categories,$products,$parametroCat,$parametroProd);
-        
-        
     }
 
     private function checkLoggedIn(){

@@ -28,20 +28,34 @@
 
 
 
-
+    {* habria que hacer un for normal para dar id por indice a cada elemento *}
     {foreach $users as $user}
-         <a href="javascript:void(0)" class="w3-bar-item w3-button w3-border-bottom test w3-hover-light-grey" onclick="openMail('Borge');w3_close();" id="firstTab">
+    {* //aca *}
+    {* w3_close() *}
+        <a href="javascript:void(0)"
+          class="users w3-bar-item w3-button w3-border-bottom test w3-hover-light-grey"
+          id="user_{$user->id_user}">
         <div class="w3-container">
-        <img class="w3-round w3-margin-right" src="/w3images/avatar3.png" style="width:15%;"><span class="w3-opacity w3-large">{$user->email}</span>
+        <img class="w3-round w3-margin-right" src="{$user->img_url}" style="width:15%;">
+        <span class="w3-opacity w3-large">{$user->email}</span>       
         {if {$user->is_admin} eq 0}  
-               <h6>Usuario: Normal</h6>
+          <h6>Usuario: Normal</h6>
         {/if}
-         {if {$user->is_admin} eq 1}  
-               <h6>Usuario: Administrador</h6>
+        {if {$user->is_admin} eq 1}  
+         <h6>Usuario: Administrador</h6>
         {/if}
+          <p>Fecha de registro: {$user->fecha_registro}</p>
+          {if {$userFromDB->is_admin} eq 1}  
+  
+            {if {$user->is_admin} eq 0}  
+            <a class="w3-button w3-light-grey" href="ascenderUsuario/{$user->id_user}">Ascender a administrador<i class="w3-margin-left fa fa-arrow-right"></i></a>
+            {/if}
+            {if {$user->is_admin} eq 1}  
+            <a class="w3-button w3-light-grey" href="descenderUsuario/{$user->id_user}">Descender a usuario normal<i class="w3-margin-left fa fa-arrow-right"></i></a>
+            {/if} 
+            <a class="w3-button w3-light-grey" href="eliminarUsuario/{$user->id_user}">Eliminar usuario<i class="w3-margin-left fa fa-arrow-right"></i></a>
+          {/if}   
         
-        
-        <p>Fecha de registro: {$user->fecha_registro}</p>
       </div>
     </a>
         
@@ -84,33 +98,38 @@
 <div class="w3-main" style="margin-left:320px;">
 <i class="fa fa-bars w3-button w3-white w3-hide-large w3-xlarge w3-margin-left w3-margin-top" onclick="w3_open()"></i>
 <a href="javascript:void(0)" class="w3-hide-large w3-red w3-button w3-right w3-margin-top w3-margin-right" onclick="document.getElementById('id01').style.display='block'"><i class="fa fa-pencil"></i></a>
-
+{* ***************************** *}
 <div id="Borge" class="w3-container person">
   <br>
-  <img class="w3-round  w3-animate-top" src="/w3images/avatar3.png" style="width:20%;">
+  <img id="current_img_container" class="w3-round  w3-animate-top" src="{$userFromDB->img_url}" style="width:20%;">
  
-        {if {$users[0]->is_admin} eq 0}  
+        {if {$userFromDB->is_admin} eq 0}  
               <h5 class="w3-opacity">Usuario: Normal</h5>
         {/if}
-         {if {$users[0]->is_admin} eq 1}  
+         {if {$userFromDB->is_admin} eq 1}  
                 <h5 class="w3-opacity">Usuario: Administrador</h5>
         {/if}
 
-  <h4><i class="fa fa-clock-o"></i>{$users[0]->email}, {$users[0]->fecha_registro}</h4>
-
-   {if {$users[0]->is_admin} eq 0}  
+  <h4><i class="fa fa-user"></i>  {$userFromDB->email}</h4>
+  <h4><i class="fa fa-clock-o"></i>  Fecha de registro: {$userFromDB->fecha_registro}</h4>
+{* 
+       {if {$userFromDB->is_admin} eq 0}  
               <a class="w3-button w3-light-grey" href="#">Convertir en administrador<i class="w3-margin-left fa fa-mail-reply"></i></a>
         {/if}
-         {if {$users[0]->is_admin} eq 1}  
+         {if {$userFromDB->is_admin} eq 1}  
               <a class="w3-button w3-light-grey" href="#">Convertir en usuario normal<i class="w3-margin-left fa fa-mail-reply"></i></a>
         {/if}
   
-  <a class="w3-button w3-light-grey" href="#">Eliminar usuario<i class="w3-margin-left fa fa-arrow-right"></i></a>
+  <a class="w3-button w3-light-grey" href="#">Eliminar usuario<i class="w3-margin-left fa fa-arrow-right"></i></a> *}
   <hr>
-  <p>{$users[0]->bio}</p> 
+  <p>{$userFromDB->bio}</p> 
 </div>
-     
+{* ***************************** *}
 </div>
+
+<script type="text/javascript" src="templates/js/userSelector.js"></script>
+
+
 
 <script>
 var openInbox = document.getElementById("myBtn");
@@ -138,26 +157,10 @@ function myFunc(id) {
   }
 }
 
-openMail("Borge")
-function openMail(personName) {
-  var i;
-  var x = document.getElementsByClassName("person");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-  }
-  x = document.getElementsByClassName("test");
-  for (i = 0; i < x.length; i++) {
-    x[i].className = x[i].className.replace(" w3-light-grey", "");
-  }
-  document.getElementById(personName).style.display = "block";
-  event.currentTarget.className += " w3-light-grey";
-}
 </script>
 
-<script>
-var openTab = document.getElementById("firstTab");
-openTab.click();
-</script>
+
+
 
 </body>
 </html> 
