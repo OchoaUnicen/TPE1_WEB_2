@@ -44,16 +44,24 @@ $ruta->addRoute("edit/:ID", "GET", "ProductsController", "editProductPrice");
 $ruta->addRoute("editar", "POST", "ProductsController", "editAllProduct");
 $ruta->addRoute("editarCategoria", "POST", "ProductsController", "editCategory");
 
-//users
+
+
+
+
+//Users
 
 $ruta->addRoute("login","GET","UserController","LogIn");
 $ruta->addRoute("logout", "GET", "UserController", "Logout");
 $ruta->addRoute("verifyUser", "POST", "UserController", "VerifyUser");
 
+
+//User register
 $ruta->addRoute("register", "GET", "UserController", "Register");
 $ruta->addRoute("registerUser", "POST", "UserController", "registerUser");
 $ruta->addRoute("userpanel", "GET", "UserController", "ShowUserPanel");
 
+
+//Admin user tools
 $ruta->addRoute("ascenderUsuario/:ID", "GET", "UserController", "AscendAdmin");
 $ruta->addRoute("descenderUsuario/:ID", "GET", "UserController", "DescendAdmin");
 $ruta->addRoute("eliminarUsuario/:ID", "GET", "UserController", "DeleteUser");

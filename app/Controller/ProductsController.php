@@ -97,27 +97,20 @@ class ProductsController {
     }
 
     function insertProduct() {
-
-
         $this->model->insertarProducto(
             $_POST['name'],
             $_POST['description'],
             $_POST['price'],
             $_POST['image_url'],
             $_POST['id_category']);
-
         // actualizar la pagina
         $this->view->ShowHomeLocation();
-
     }
 
     function insertCategory() {
-
         $this->model->insertarCategoria($_POST['nombre']);
-
         // actualizar la pagina
         $this->view->ShowHomeLocation();
-
     }
 
     
