@@ -12,6 +12,7 @@ class ProductsController {
     function __construct(){
         $this->view = new ProductsView();
         $this->model = new ProductsModel();
+        
     }
 
     function Home(){
@@ -59,14 +60,42 @@ class ProductsController {
      
         $categories = $this->model->GetCategories();
         $products = $this->model->GetProducts();
+        $loggedIn = 0;
+        
         //aca quede
         //if product id == category id then
         //traer una sola categoria que cumpla ser la del parametro
             $this->model->GetAllByCatName($parametroCat);
             $product = $this->model->GetProduct($parametroProd);
+
             //model get by id($parametroProd)
+
+        
+
+
+
+
+
+            $comments = $this->model->getAllComentsByProductId($parametroProd);
+            $cantidad_comentarios = count($comments);
+
+
+
+
+
+
+
+            //DETECTA SI ESTA LOGGEADO O NO PARA MOSTRAR EL CONTENEDOR DE AGREGAR COMENTARIOS
+            session_start();
+        if (isset($_SESSION["EMAIL"]) && !empty($_SESSION["EMAIL"])){
+            //if ($_SESSION['ADMIN'] == 1) {
+                $loggedIn = 1;
+            //}
+        }
+
+
             
-            $this->view->ShowbySpecificId($categories,$products,$parametroCat,$parametroProd);
+            $this->view->ShowbySpecificId($categories,$products,$parametroCat,$parametroProd,$loggedIn, $comments, $cantidad_comentarios);
     }
 
     private function checkLoggedIn(){
@@ -158,6 +187,29 @@ class ProductsController {
         $this->model->DeleteCategory($category_id);
         $this->view->ShowHomeLocation();
     }
+
+
+
+
+
+    //COMENTARIOS
+    //en prueba
+    function insertComment($params = null) {
+        $id_product = $params[':ID'];
+        $this->checkLoggedIn();
+
+
+
+        $this->model->InsertComment(
+            $_POST['select'],
+            $_POST['input_comentario'],
+            $id_product
+         );
+        // actualizar la pagina
+        $this->view->ShowHomeLocation();
+    }
+
+
 
 
 }

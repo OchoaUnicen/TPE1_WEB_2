@@ -67,6 +67,12 @@ $ruta->addRoute("descenderUsuario/:ID", "GET", "UserController", "DescendAdmin")
 $ruta->addRoute("eliminarUsuario/:ID", "GET", "UserController", "DeleteUser");
 
 
+//ROUTE DE COMENTARIOS
+
+$ruta->addRoute("crearComentario", "GET", "ProductsContoller", "insertComment");
+
+
+//FIN ROUTE DE COMENTARIOS
 
 
 

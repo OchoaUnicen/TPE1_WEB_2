@@ -31,7 +31,7 @@ class ProductsView {
         $smarty->display('templates/mainContentbyCategory.tpl'); // muestro el template 
     }
 
-    function ShowbySpecificId($categories,$products,$parametroCat,$parametroProd) {
+    function ShowbySpecificId($categories,$products,$parametroCat,$parametroProd,$loggedIn, $comments, $cantidad_comentarios) {
  
         $smarty = new Smarty();
         $smarty->assign('titulo_s', $this->title);
@@ -39,6 +39,9 @@ class ProductsView {
         $smarty->assign('products', $products);
         $smarty->assign('parametro_categoria', $parametroCat);
         $smarty->assign('parametro_producto', $parametroProd);
+        $smarty->assign('loggedIn', $loggedIn);
+        $smarty->assign('comments', $comments);
+        $smarty->assign('cantidad_comentarios', $cantidad_comentarios);
         $smarty->display('templates/singleProduct.tpl'); // muestro el template 
     }
 

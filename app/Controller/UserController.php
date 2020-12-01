@@ -135,7 +135,7 @@ class UserController{
        $input_id;
        $input_pass;
        $time = date("Y-m-d");
-       $default_img_url = "http://shorturl.at/eiqvS";
+       $default_img_url = "https://media.discordapp.net/attachments/575273032512438272/783289158369280010/no_definido.jpg?width=415&height=475";
         if (isset($_POST['input_user_register']) && !empty($_POST['input_user_register'])) {
 
             $input_id = $_POST['input_user_register'];

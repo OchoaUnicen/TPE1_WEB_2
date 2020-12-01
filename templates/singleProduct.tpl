@@ -32,14 +32,31 @@
     {/foreach}      
 
 
-    {* ACA IRIA LA CAJA DE COMENTARIOS SI EL USUARIO ESTA CONECTADO *}
+  
+    {* ACA IRIA LA CAJA DE CREAR COMENTARIOS SI EL USUARIO ESTA CONECTADO *}
 
+       {if {$loggedIn} eq 1}
+            {include file="api_comentarios/crearComentario.tpl"}
+       {/if}
 
-    {* SI EL COMENTARIO TIENE UN BOTON DE BORRAR O NO DEPENDERA SI EL USUARIO ES ADMIN O NO *}
-
-
-
+   
     {* ACA IRIAN EL RESTO DE LOS COMENTARIOS DE ESTE ITEM *}
+
+   <h2>Comentarios: </h2> <br>
+    {if {$cantidad_comentarios} > 0}
+             {foreach $comments as $comment}
+                <p>Usuario: {$comment->id_user}</p>
+                <p>Puntuacion: {$comment->puntuacion}  Comentario: {$comment->comentario} </p> <br>
+            {/foreach}
+    {/if}
+
+ 
+
+        {* SI EL COMENTARIO TIENE UN BOTON DE BORRAR O NO DEPENDERA SI EL USUARIO ES ADMIN O NO *}
+
+
+
+  
     
 
     <footer>

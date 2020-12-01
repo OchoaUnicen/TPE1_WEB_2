@@ -39,7 +39,7 @@ class ProductsModel {
         $catN = $this->db->prepare("SELECT FROM category WHERE nombre=?");
         $catN->execute(array($category_name));
         return $catN->fetch(PDO::FETCH_OBJ);
-        ;
+        
     }
 
     function insertarProducto($name,$description,$price,$image_url,$id_category){
@@ -107,6 +107,39 @@ class ProductsModel {
         $sentencia = $this->db->prepare("UPDATE product SET name='$name', description='$description', price='$price', image_url='$image_url', id_category='$id_category' WHERE id_product=?");
         $sentencia->execute(array($product_id));
     
+    }
+
+
+
+
+
+
+
+
+
+    //------------------------------------------COMENTARIOS---------------
+
+
+    // SEGUIR ACA
+
+    function getAllComentsByProductId($id_product){
+
+        $comments = $this->db->prepare("SELECT * FROM comments WHERE id_product=?");
+        $comments->execute(array($id_product));
+        return $comments->fetchAll(PDO::FETCH_OBJ);
+
+
+
+    }
+
+
+
+    function InsertComment($puntuacion,$comentario,$id_product){
+
+        $sentencia = $this->db->prepare("INSERT INTO comments(puntuacion, comentario, id_product) VALUES(?,?,?)");
+        $sentencia->execute(array($puntuacion, $comentario, $id_product));
+    
+
     }
 
 

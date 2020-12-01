@@ -6,14 +6,34 @@ require_once 'api/APITasksController.php';
 $router = new Router();
 
 // armo la tabla de ruteo de la API REST
-$router->addRoute('tareas', 'GET', 'APITasksController', 'GetTasks');
-$router->addRoute('tareas/:ID', 'GET', 'APITasksController', 'GetTask');
-$router->addRoute('tareas/:ID', 'DELETE', 'APITasksController', 'DeleteTask');
+    // $router->addRoute('tareas', 'GET', 'APITasksController', 'GetTasks');
+    // $router->addRoute('tareas/:ID', 'GET', 'APITasksController', 'GetTask');
+    // $router->addRoute('tareas/:ID', 'DELETE', 'APITasksController', 'DeleteTask');
 
-$router->addRoute('tareas', 'POST', 'APITasksController', 'InsertTask');
+    // $router->addRoute('tareas', 'POST', 'APITasksController', 'InsertTask');
 
 
-$router->addRoute('tareas/:ID', 'PUT', 'APITasksController', 'UpdateTask');
+    // $router->addRoute('tareas/:ID', 'PUT', 'APITasksController', 'UpdateTask');
+
+
+
+
+
+    
+    // $router->addRoute("crearComentario", "POST", "APITasksController", "insertComment");
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
  //run
